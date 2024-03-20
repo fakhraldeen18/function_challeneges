@@ -97,6 +97,32 @@ namespace FunctionChallenges
             Console.WriteLine($"Numbers: {num1}, {num2}");
             Console.WriteLine($"Strings: {str1}, {str2}");
 
+            // Challenge 3: Guessing Game
+            Console.WriteLine("\nChallenge 3: Guessing Game");
+            // Uncomment to test the GuessingGame method
+            GuessingGame();   // Expected outcome: User input until the correct number is guessed or user inputs `Quit`
+            static void GuessingGame()
+            {
+                while (true)
+                {
+                    Random random = new();
+                    int guessNumber = random.Next(10);
+                    Console.WriteLine("Guessing number and type 'Quit' to exit the game");
+                    string? input = Console.ReadLine();
+
+                    if (input is null || input.Equals("Quit", StringComparison.CurrentCultureIgnoreCase) || input == "")
+                    {
+                        Console.WriteLine("the game end ");
+                        break;
+                    }
+                    else if (Convert.ToInt16(input) == guessNumber)
+                    {
+                        Console.WriteLine("Correct guess");
+                        break;
+                    }
+                }
+            }
+
         }
     }
 }

@@ -10,7 +10,8 @@ namespace FunctionChallenges
         {
             // Challenge 1: String and Number Processor
             Console.WriteLine("Challenge 1: String and Number Processor");
-            object StringNumberProcessor(params object[] stingNumber)
+
+            static object StringNumberProcessor(params object[] stingNumber)
             {
                 StringBuilder concatString = new();
                 int sum = 0;
@@ -123,6 +124,27 @@ namespace FunctionChallenges
                 }
             }
 
+
+
+
+            // Challenge 4: Simple Word Reversal
+            Console.WriteLine("\nChallenge 4: Simple Word Reversal");
+            string sentence = "This is the original sentence!";
+            string reversed = ReverseWords(sentence);
+
+            string ReverseWords(string words)
+            {
+                string[] word = words.Split(' ');
+                List<string> reversWord = [];
+
+                Array.ForEach(word, (wrd) =>
+                {
+                    string reversedWord = new(wrd.Reverse().ToArray());
+                    reversWord.Add(reversedWord);
+                });
+                return string.Join(" ", reversWord);
+            }
+            Console.WriteLine(reversed); // Expected outcome: "sihT si eht lanigiro !ecnetnes"
         }
     }
 }

@@ -134,13 +134,13 @@ namespace FunctionChallenges
 
             string ReverseWords(string words)
             {
-                string[] word = words.Split(' ');
+                string[] word = words.Split(" ");
                 List<string> reversWord = [];
 
                 Array.ForEach(word, (wrd) =>
                 {
-                    string reversedWord = new(wrd.Reverse().ToArray());
-                    reversWord.Add(reversedWord);
+                    string reversed = new(wrd.Reverse().ToArray());
+                    reversWord.Add(reversed);
                 });
                 return string.Join(" ", reversWord);
             }
